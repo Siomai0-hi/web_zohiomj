@@ -1,49 +1,61 @@
-<!DOCTYPE html>
-<HTML> 
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Даваажаргал Мөнхнараны чадвар, хобби, боловсрол">
+  <title>Даваажаргал Мөнхнаран | Дэлгэрэнгүй</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">Веб зохиомж · CV</p>
+      <h1>Дэлгэрэнгүй мэдээлэл</h1>
+      <p>Сонирхол, чадвар болон суралцаж буй чиглэлийн танилцуулга.</p>
+      <nav class="site-nav" aria-label="Үндсэн цэс">
+        <ul>
+          <li><a href="index.html">Танилцуулга</a></li>
+          <li><a href="page2.html" aria-current="page">Дэлгэрэнгүй</a></li>
+          <li><a href="Lab2.html">Анкет</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<HEAD>
-<TITLE>Миний CV - Дэлгэрэнгүй мэдээлэл</TITLE> 
-</HEAD>
+  <main class="site-main">
+    <div class="content-grid">
+      <section class="panel" aria-labelledby="skills-title">
+        <h2 id="skills-title">Авьяас, чадвар</h2>
+        <ul class="clean-list">
+          <li>Шатар тоглох</li>
+          <li>Тайван орчинд төвлөрч ажиллах</li>
+          <li>Linux kernel сонирхон судлах</li>
+        </ul>
+      </section>
 
-<BODY bgcolor="white">
+      <section class="panel" aria-labelledby="hobby-title">
+        <h2 id="hobby-title">Хобби</h2>
+        <p>Явган аялал, шинэ газар орчинтой танилцах.</p>
+      </section>
 
-<CENTER>
-<H1>Дэлгэрэнгүй мэдээлэл</H1>
-</CENTER>
+      <section class="panel panel-wide" aria-labelledby="education-title">
+        <h2 id="education-title">Боловсрол</h2>
+        <div class="timeline-item">
+          <h3>Мэдээлэл Холбооны технологийн сургууль</h3>
+          <p><strong>Хугацаа:</strong> 2025 он - 2029 он</p>
+          <p><strong>Мэргэжил:</strong> Хиймэл оюун ухаан</p>
+        </div>
+      </section>
+    </div>
 
-<HR>
+    <a class="button-link" href="index.html">Танилцуулга руу буцах</a>
+  </main>
 
-<H2>Авъяас, чадвар</H2>
-<UL>
-  <LI>chess</LI>
-  <LI>just chill</LI>
-  <LI>Linux kernel</LI>
-</UL>
-
-<H2>Хобби</H2>
-<P>
-<I>Hiking</I>
-</P>
-
-<H2>Боловсрол</H2>
-
-<H3>Их сургууль</H3>
-<P>
-<B>Хугацаа:</B> 2025он - 2029он <BR>
-<B>Сургууль:</B> Мэдээлэл Холбооны технологийн сургууль <BR>
-<B>Мэргэжил:</B> Хиймэл оюун ухаан
-</P>
-
-<HR>
-
-<CENTER>
-<P>
-<FONT size="4" color="blue">
-<A href="index.html">Буцах</A>
-</FONT>
-</P>
-</CENTER>
-
-</BODY>
-
-</HTML>
+  <footer class="site-footer">
+    <p>&copy; 2026 Веб зохиомж хичээл. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </footer>
+</body>
+</html>

@@ -1,51 +1,66 @@
-<!DOCTYPE html>
-<HTML>
-<HEAD>
-<TITLE>Lab1_CV</TITLE>
-</HEAD>
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Даваажаргал Мөнхнараны танилцуулга">
+  <title>Даваажаргал Мөнхнаран | Танилцуулга</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <p class="eyebrow">Веб зохиомж · Миний танилцуулга</p>
+      <h1>Сайн байна уу, намайг Даваажаргал гэдэг.</h1>
+      <p>Мэдээлэл, сонирхол болон суралцаж буй чиглэлийн тухай товч танилцуулга.</p>
+      <nav class="site-nav" aria-label="Үндсэн цэс">
+        <ul>
+          <li><a href="index.html" aria-current="page">Танилцуулга</a></li>
+          <li><a href="page2.html">Дэлгэрэнгүй</a></li>
+          <li><a href="Lab2.html">Анкет</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<BODY bgcolor="white">
+  <main class="site-main">
+    <section class="panel panel-wide profile-layout" aria-labelledby="profile-title">
+      <img class="profile-photo" src="image.jpg" width="160" height="210" alt="Даваажаргал Мөнхнараны зураг">
+      <div>
+        <p class="eyebrow">Хувийн мэдээлэл</p>
+        <h2 id="profile-title">Миний тухай</h2>
+        <ul class="info-list">
+          <li><strong>Ургийн овог</strong> Балган</li>
+          <li><strong>Овог</strong> Мөнхнаран</li>
+          <li><strong>Нэр</strong> Даваажаргал</li>
+          <li><strong>Төрсөн газар</strong> Улаанбаатар</li>
+        </ul>
+      </div>
+    </section>
 
-<CENTER>
-<H1>Танилцуулгa</H1>
-</CENTER>
+    <div class="content-grid">
+      <section class="panel" aria-labelledby="contact-title">
+        <h2 id="contact-title">Холбоо барих</h2>
+        <ul class="info-list">
+          <li><strong>Хаяг</strong> 23-р хороо</li>
+          <li><strong>Утас</strong> <a href="tel:+97685216480">85216480</a></li>
+          <li><strong>Имэйл</strong> <a href="mailto:davkadavka617@gmail.com">davkadavka617@gmail.com</a></li>
+          <li><strong>Facebook</strong> <a href="https://facebook.com/davka.davka">davka.davka</a></li>
+        </ul>
+      </section>
 
-<HR>
+      <section class="panel" aria-labelledby="next-title">
+        <h2 id="next-title">Дараагийн алхам</h2>
+        <p>Миний чадвар, хобби, боловсролын дэлгэрэнгүй мэдээлэлтэй танилцаарай.</p>
+        <a class="button-link" href="page2.html">Дэлгэрэнгүй үзэх</a>
+      </section>
+    </div>
+  </main>
 
-<CENTER>
-<IMG src="image.jpg" height="200" width="150" border="1" alt="Миний зураг">
-<BR>
-<SMALL><I>image.jpg</I></SMALL>
-</CENTER>
-
-<BR><BR>
-
-<H2>Хувийн мэдээлэл</H2>
-<UL>
-  <LI><STRONG>Ургийн овог:</STRONG> Балган</LI>
-  <LI><STRONG>Овог:</STRONG> Мөнхнаран</LI>
-  <LI><STRONG>Нэр:</STRONG> Даваажаргал</LI>
-  <LI><STRONG>Төрсөн газар:</STRONG> Улаанбаатар</LI>
-</UL>
-
-<H2>Холбоо барих мэдээлэл</H2>
-<UL>
-  <LI><B>Хаяг:</B> 23-р хороо</LI>
-  <LI><B>Утас:</B> 85216480</LI>
-  <LI><B>Цахим шуудан:</B> <U>davkadavka617@gmail.com</U></LI>
-  <LI><B>Facebook хаяг:</B> <U>facebook.com/davka.davka</U></LI>
-</UL>
-
-<HR>
-
-<CENTER>
-<P>
-<FONT size="4" color="blue">
-<A href="page2.html">Дэлгэрэнгүй</A>
-</FONT>
-</P>
-</CENTER>
-
-</BODY>
-
-</HTML> 
+  <footer class="site-footer">
+    <p>&copy; 2026 Веб зохиомж хичээл. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </footer>
+</body>
+</html>
