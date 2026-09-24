@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Лаборатори 02: Хэрэглэгчийн анкет</title>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&display=swap" rel="stylesheet">
+ <style>
+  :root{--ink:#14224a;--paper:#f5f6fa;--card:#fff;--line:#d9dde9;--blue:#1b3f94;--gold:#f2b705;--red:#c4272f;--ok:#1f8a4c;--text:#1d2233}
+  @media(prefers-color-scheme:dark){:root{--ink:#e8ecfa;--paper:#0f1424;--card:#171e36;--line:#2b3556;--blue:#7ea2ff;--text:#e3e7f5}}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Golos Text",system-ui,"Segoe UI",Arial,sans-serif;background:var(--paper);color:var(--text);line-height:1.6}
+  header{background:var(--blue);color:#fff;padding:1.2rem 1.5rem 0;border-bottom:6px solid var(--gold)}
+  header h1{margin:0 0 .6rem;font-size:1.6rem}
+  nav ul{display:flex;gap:.25rem;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+  nav a{display:block;padding:.5rem 1rem;color:#fff;text-decoration:none;border-radius:8px 8px 0 0}
+  nav a:hover,nav a:focus-visible{background:rgba(255,255,255,.18);outline:none}
+  main{max-width:1040px;margin:0 auto;padding:1.5rem;display:grid;grid-template-columns:1fr 300px;gap:1.5rem;align-items:start}
+  main>article,main>section{grid-column:1}
+  aside{grid-column:2;grid-row:1 / span 3;position:sticky;top:1rem}
+  section{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.25rem 1.5rem}
+  h2{margin-top:0;color:var(--ink)}
+  fieldset{border:1px solid var(--line);border-radius:10px;padding:1rem 1.25rem;margin:0 0 1rem}
+  legend{font-weight:700;color:var(--blue);padding:0 .5rem}
+  label{font-weight:500}
+  input:not([type=radio],[type=checkbox]),select,textarea{width:100%;max-width:100%;padding:.55rem .7rem;margin-top:.2rem;border:1.5px solid var(--line);border-radius:8px;background:var(--paper);color:inherit;font:inherit}
+  input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:1px}
+  input:user-valid,textarea:user-valid,select:user-valid{border-color:var(--ok)}
+  input:user-invalid,select:user-invalid{border-color:var(--red)}
+  .row{margin-bottom:.9rem}
+  .pw{display:flex;gap:.4rem}.pw button{margin-top:.2rem;white-space:nowrap}
+  .hint{font-size:.85rem;opacity:.75}
+  button{font:inherit;padding:.6rem 1.2rem;border-radius:8px;border:1.5px solid var(--blue);background:transparent;color:var(--blue);cursor:pointer}
+  button[type=submit]{background:var(--blue);color:#fff}
+  #status{margin-top:1rem;padding:.8rem 1rem;border-radius:8px;background:rgba(31,138,76,.12);border:1px solid var(--ok);display:none}
+  table{width:100%;border-collapse:collapse}
+  th,td{padding:.6rem .8rem;text-align:left;border-bottom:1px solid var(--line)}
+  thead th{background:var(--blue);color:#fff}
+  td:last-child,th:last-child{text-align:right}
+  tfoot td{font-weight:700;border-bottom:0}
+  /* Оюутны үнэмлэхийн урьдчилсан харагдац */
+  .id{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 8px 24px rgba(20,34,74,.18)}
+  .id-top{background:var(--blue);color:#fff;padding:.6rem 1rem;font-weight:700;border-bottom:4px solid var(--gold)}
+  .id-body{padding:1rem;text-align:center}
+  .photo{width:110px;height:110px;border-radius:50%;margin:0 auto .7rem;background:var(--line) center/cover;display:grid;place-items:center;font-size:2.2rem;font-weight:700;color:var(--blue)}
+  .id-body strong{display:block;font-size:1.1rem;color:var(--ink)}
+  .id-body span{display:block;font-size:.9rem;opacity:.8;word-break:break-all}
+  .id-bar{height:8px;background:linear-gradient(90deg,var(--red) 33%,var(--blue) 33% 66%,var(--red) 66%)}
+  footer{text-align:center;padding:1.5rem;border-top:1px solid var(--line);font-size:.9rem}
+  @media(max-width:820px){main{grid-template-columns:1fr}aside{grid-column:1;grid-row:auto;position:static;order:-1}}
+ </style>
+</head>
+<body>
+ <!-- Вэбийн толгой хэсэг -->
+ <header>
+  <h1>Оюутны Бүртгэлийн Портал</h1>
+  <!-- Навигацийн цэс -->
+  <nav aria-label="Үндсэн цэс">
+   <ul>
+    <li><a href="../index.html">Нүүр</a></li>
+    <li><a href="#anket">Анкет засах</a></li>
+    <li><a href="#">Тусламж</a></li>
+   </ul>
+  </nav>
+ </header>
+
+ <!-- Үндсэн контент -->
+ <main>
+  <!-- Оюутны үнэмлэхийн шууд урьдчилсан харагдац -->
+  <aside aria-label="Үнэмлэхийн урьдчилсан харагдац">
+   <div class="id">
+    <div class="id-top">Оюутны үнэмлэх</div>
+    <div class="id-body">
+     <div class="photo" id="pPhoto" aria-hidden="true">?</div>
+     <strong id="pName">Овог нэр</strong>
+     <span id="pMail">email@domain.com</span>
+     <span id="pDegree">Түвшин сонгоогүй</span>
+    </div>
+    <div class="id-bar"></div>
+   </div>
+   <p class="hint">Анкетаа бөглөх тусам үнэмлэх шууд шинэчлэгдэнэ.</p>
+  </aside>
+
+  <article id="anket">
+   <section>
+    <h2>Хэрэглэгчийн Анкет Бөглөх</h2>
+    <p>Доорх формын дагуу мэдээллээ бүрэн, үнэн зөв зааж бөглөнө үү.</p>
+
+    <form action="#" method="POST" enctype="multipart/form-data" id="regForm">
+     <!-- 1-р бүлэг: Хувийн мэдээлэл -->
+     <fieldset>
+      <legend>Хувийн мэдээлэл</legend>
+      <div class="row">
+       <label for="fullname">Овог нэр:</label>
+       <input type="text" id="fullname" name="fullname" placeholder="И. Болдбаатар" required minlength="2">
+      </div>
+      <div class="row">
+       <label for="email">Цахим хаяг (Email):</label>
+       <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+      </div>
+      <div class="row">
+       <label for="password">Нууц үг:</label>
+       <div class="pw">
+        <input type="password" id="password" name="password" required minlength="6" autocomplete="new-password">
+        <button type="button" id="togglePw" aria-controls="password">Харуулах</button>
+       </div>
+       <span class="hint" id="pwHint">Хамгийн багадаа 6 тэмдэгт.</span>
+      </div>
+      <div class="row">
+       <label for="phone">Утасны дугаар:</label>
+       <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" placeholder="88112233" required title="8 оронтой тоо оруулна уу">
+      </div>
+      <div class="row">
+       <label for="dob">Төрсөн огноо:</label>
+       <input type="date" id="dob" name="dob" required>
+      </div>
+      <div class="row" role="radiogroup" aria-labelledby="genderLabel">
+       <span id="genderLabel"><strong>Хүйс:</strong></span><br>
+       <input type="radio" id="male" name="gender" value="male" required>
+       <label for="male">Эрэгтэй</label>
+       <input type="radio" id="female" name="gender" value="female">
+       <label for="female">Эмэгтэй</label>
+      </div>
+     </fieldset>
+
+     <!-- 2-р бүлэг: Мэргэжил ба Сургалтын мэдээлэл -->
+     <fieldset>
+      <legend>Боловсрол ба Сонирхол</legend>
+      <div class="row">
+       <label for="degree">Суралцаж буй түвшин:</label>
+       <select id="degree" name="degree" required>
+        <option value="">-- Сонгоно уу --</option>
+        <option value="bachelor">Бакалавр</option>
+        <option value="master">Магистр</option>
+        <option value="doctor">Докторант</option>
+       </select>
+      </div>
+      <div class="row">
+       <strong>Сонирхож буй технологиуд:</strong><br>
+       <input type="checkbox" id="html" name="skills" value="HTML">
+       <label for="html">HTML5 / CSS3</label><br>
+       <input type="checkbox" id="js" name="skills" value="JavaScript">
+       <label for="js">JavaScript</label><br>
+       <input type="checkbox" id="php" name="skills" value="PHP">
+       <label for="php">PHP &amp; MySQL</label>
+      </div>
+      <div class="row">
+       <label for="avatar">Профайл зураг оруулна уу:</label>
+       <input type="file" id="avatar" name="avatar" accept="image/*">
+      </div>
+      <div class="row">
+       <label for="bio">Товч танилцуулга / Өөрийн тухай:</label>
+       <textarea id="bio" name="bio" rows="4" maxlength="300" placeholder="Өөрийн танилцуулгыг энд бичнэ үү..."></textarea>
+       <span class="hint" id="bioCount">0 / 300</span>
+      </div>
+     </fieldset>
+
+     <!-- Илгээх ба Арилгах товчлуурууд -->
+     <button type="submit">Анкет Илгээх</button>
+     <button type="reset">Дахин эхлүүлэх</button>
+     <p id="status" role="status"></p>
+    </form>
+   </section>
+  </article>
+
+  <!-- Сонирхлын жагсаалт -->
+  <section>
+   <h2>Миний сонирхол</h2>
+   <ul>
+    <li>Веб хөгжүүлэлт</li>
+    <li>Фото зураг авах</li>
+    <li>Кино үзэх</li>
+   </ul>
+  </section>
+
+  <!-- Дүнгийн хүснэгт -->
+  <section>
+   <h2>Миний дүн</h2>
+   <table>
+    <caption class="hint" style="text-align:left;caption-side:bottom;padding-top:.4rem">Улирлын дүн (100 онооны системээр)</caption>
+    <thead>
+     <tr>
+      <th scope="col">Хичээл</th>
+      <th scope="col">Дүн</th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr><td>Веб зохиомж</td><td>95</td></tr>
+     <tr><td>Мэдээллийн сан</td><td>88</td></tr>
+     <tr><td>Алгоритм</td><td>92</td></tr>
+    </tbody>
+    <tfoot>
+     <tr><td>Дундаж</td><td>91.7</td></tr>
+    </tfoot>
+   </table>
+  </section>
+ </main>
+
+ <!-- Хөл хэсэг -->
+ <footer>
+  <p>&copy; 2026 Веб зохиомж хичээл. Бүх эрх хуулиар хамгаалагдсан.</p>
+ </footer>
+
+ <script>
+  const $ = id => document.getElementById(id);
+  const form = $('regForm');
+
+  // Үнэмлэхийн шууд шинэчлэл
+  $('fullname').addEventListener('input', e => {
+   const v = e.target.value.trim();
+   $('pName').textContent = v || 'Овог нэр';
+   if (!$('pPhoto').style.backgroundImage) $('pPhoto').textContent = v ? v[0].toUpperCase() : '?';
+  });
+  $('email').addEventListener('input', e => $('pMail').textContent = e.target.value || 'email@domain.com');
+  $('degree').addEventListener('change', e => {
+   $('pDegree').textContent = e.target.selectedIndex ? e.target.options[e.target.selectedIndex].text : 'Түвшин сонгоогүй';
+  });
+  $('avatar').addEventListener('change', e => {
+   const f = e.target.files[0];
+   const p = $('pPhoto');
+   if (f && f.type.startsWith('image/')) { p.style.backgroundImage = `url(${URL.createObjectURL(f)})`; p.textContent = ''; }
+   else { p.style.backgroundImage = ''; p.textContent = $('fullname').value.trim()[0] || '?'; }
+  });
+
+  // Нууц үг харуулах/нуух
+  $('togglePw').addEventListener('click', e => {
+   const pw = $('password'), show = pw.type === 'password';
+   pw.type = show ? 'text' : 'password';
+   e.target.textContent = show ? 'Нуух' : 'Харуулах';
+  });
+
+  // Нууц үгийн бат бэхийн зөвлөмж
+  $('password').addEventListener('input', e => {
+   const v = e.target.value;
+   const score = (v.length >= 6) + (v.length >= 10) + /[A-Z]/.test(v) + /\d/.test(v) + /[^\w]/.test(v);
+   $('pwHint').textContent = !v ? 'Хамгийн багадаа 6 тэмдэгт.' : ['Маш сул','Сул','Дунд','Сайн','Хүчтэй','Маш хүчтэй'][score];
+  });
+
+  // Танилцуулгын тэмдэгт тоологч
+  $('bio').addEventListener('input', e => $('bioCount').textContent = `${e.target.value.length} / 300`);
+
+  // Монгол хэл дээрх валидацийн мессеж
+  const msgs = {
+   fullname: 'Овог нэр хамгийн багадаа 2 тэмдэгт байна.',
+   email: 'Зөв цахим хаяг оруулна уу (жишээ: example@domain.com).',
+   password: 'Нууц үг хамгийн багадаа 6 тэмдэгт байна.',
+   phone: 'Утасны дугаар яг 8 оронтой тоо байх ёстой.',
+   dob: 'Төрсөн огноогоо сонгоно уу.',
+   gender: 'Хүйсээ сонгоно уу.',
+   degree: 'Суралцаж буй түвшингээ сонгоно уу.'
+  };
+  form.querySelectorAll('input,select').forEach(el => {
+   el.addEventListener('invalid', () => el.setCustomValidity(msgs[el.name] || ''));
+   el.addEventListener('input', () => el.setCustomValidity(''));
+   el.addEventListener('change', () => el.setCustomValidity(''));
+  });
+
+  // Илгээх (демо: хуудас дахин ачаалахгүй, баталгаажуулга харуулна)
+  form.addEventListener('submit', e => {
+   e.preventDefault();
+   const s = $('status');
+   s.textContent = `Баярлалаа, ${$('fullname').value.trim()}! Таны анкет амжилттай илгээгдлээ.`;
+   s.style.display = 'block';
+  });
+  form.addEventListener('reset', () => {
+   $('status').style.display = 'none';
+   $('pDegree').textContent = 'Түвшин сонгоогүй';
+   $('pPhoto').style.backgroundImage = ''; $('pPhoto').textContent = '?';
+   $('bioCount').textContent = '0 / 300'; $('pwHint').textContent = 'Хамгийн багадаа 6 тэмдэгт.';
+  });
+ </script>
+</body>
+</html>
