@@ -1,0 +1,142 @@
+:root {
+  --text: #222;
+  --line: #bbb;
+  --blue: #315f78;
+  --background: #f4f4f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--background);
+  font-family: "Golos Text", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.site-header {
+  padding: 1rem max(1rem, calc((100% - 720px) / 2));
+  color: #fff;
+  background: var(--blue);
+}
+
+.page-title {
+  margin: 0 0 .75rem;
+  font-size: 1.6rem;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav a {
+  color: #fff;
+}
+
+.main-layout {
+  max-width: 720px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.content-panel {
+  padding: 1rem;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.form-title-row {
+  position: relative;
+  padding-right: 5rem;
+}
+
+.section-title {
+  margin: 0 0 .5rem;
+  font-size: 1.4rem;
+}
+
+.form-badge {
+  position: absolute;
+  top: .15rem;
+  right: 0;
+  padding: .1rem .35rem;
+  background: #eee;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-size: .75rem;
+}
+
+.intro-text {
+  margin: 0 0 1rem;
+}
+
+.registration-form fieldset {
+  margin: 0 0 1rem;
+  padding: .8rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.registration-form legend {
+  padding: 0 .35rem;
+  font-weight: 700;
+}
+
+.form-row {
+  margin-bottom: .8rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: .25rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: .5rem .6rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font: inherit;
+}
+
+.form-choice {
+  accent-color: var(--blue);
+}
+
+.choice-label {
+  margin-right: .75rem;
+}
+
+.form-button {
+  margin-right: .35rem;
+  padding: .5rem .8rem;
+  color: #fff;
+  background: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+  font: inherit;
+}
+
+.site-footer {
+  padding: 1rem;
+  color: #555;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    padding: 1rem;
+  }
+
+  .content-panel {
+    padding: .75rem;
+  }
+}
