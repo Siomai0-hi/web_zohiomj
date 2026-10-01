@@ -4,12 +4,12 @@
   --paper: #f3f7f6;
   --card: #ffffff;
   --line: #d4e1df;
-  --teal: #087f8c;
+  --teal: #000202;
   --teal-dark: #075b67;
   --mint: #dff3ee;
-  --gold: #e7a928;
-  --red: #c84b50;
-  --ok: #1f8a61;
+  --gold: #0f0b04;
+  --red: #0f04dc;
+  --ok: #092319;
   --shadow: 0 16px 36px rgba(24, 50, 75, 0.1);
 }
 
@@ -55,7 +55,7 @@ textarea:focus-visible {
 
 .eyebrow {
   margin: 0 0 .35rem;
-  color: #bce9e1;
+  color: #000a0800;
   font-size: .8rem;
   font-weight: 700;
   letter-spacing: .12em;
