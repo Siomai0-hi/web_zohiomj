@@ -1,104 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="mn">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Оюутны бүртгэл</title>
+  <meta name="description" content="Даваажаргал Мөнхнараны чадвар, хобби, боловсрол">
+  <title>Даваажаргал Мөнхнаран | Дэлгэрэнгүй</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
-    <h1 class="page-title">Оюутны бүртгэл</h1>
-    <nav class="main-nav" aria-label="Үндсэн цэс">
-      <ul>
-        <li><a href="index.html">Нүүр</a></li>
-        <li><a href="#anket">Анкет</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <p class="eyebrow">Веб зохиомж · CV</p>
+      <h1>Дэлгэрэнгүй мэдээлэл</h1>
+      <p>Сонирхол, чадвар болон суралцаж буй чиглэлийн танилцуулга.</p>
+      <nav class="site-nav" aria-label="Үндсэн цэс">
+        <ul>
+          <li><a href="Lab1.html">Танилцуулга</a></li>
+          <li><a href="Lab2.html" aria-current="page">Дэлгэрэнгүй</a></li>
+          <li><a href="Lab3.html">Анкет</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main class="main-layout">
-    <section class="content-panel" id="anket">
-      <div class="form-title-row">
-        <h2 class="section-title">Анкет бөглөх</h2>
-        <span class="form-badge">Шинэ</span>
-      </div>
-      <p class="intro-text">Доорх мэдээллийг бөглөнө үү.</p>
+  <main class="site-main">
+    <div class="content-grid">
+      <section class="panel" aria-labelledby="skills-title">
+        <h2 id="skills-title">Авьяас, чадвар</h2>
+        <ul class="clean-list">
+          <li>Шатар тоглох</li>
+          <li>Тайван орчинд төвлөрч ажиллах</li>
+          <li>Linux kernel сонирхон судлах</li>
+        </ul>
+      </section>
 
-      <form class="registration-form" action="#" method="post">
-        <fieldset>
-          <legend>Хувийн мэдээлэл</legend>
+      <section class="panel" aria-labelledby="hobby-title">
+        <h2 id="hobby-title">Хобби</h2>
+        <p>Явган аялал, шинэ газар орчинтой танилцах.</p>
+      </section>
 
-          <div class="form-row">
-            <label class="form-label" for="fullname">Овог нэр:</label>
-            <input class="form-control" type="text" id="fullname" name="fullname" required>
-          </div>
+      <section class="panel panel-wide" aria-labelledby="education-title">
+        <h2 id="education-title">Боловсрол</h2>
+        <div class="timeline-item">
+          <h3>Мэдээлэл Холбооны технологийн сургууль</h3>
+          <p><strong>Хугацаа:</strong> 2025 он - 2029 он</p>
+          <p><strong>Мэргэжил:</strong> Хиймэл оюун ухаан</p>
+        </div>
+      </section>
+    </div>
 
-          <div class="form-row">
-            <label class="form-label" for="email">Цахим шуудан:</label>
-            <input class="form-control" type="email" id="email" name="email" required>
-          </div>
-
-          <div class="form-row">
-            <label class="form-label" for="password">Нууц үг:</label>
-            <input class="form-control" type="password" id="password" name="password" required>
-          </div>
-
-          <div class="form-row">
-            <label class="form-label" for="phone">Утасны дугаар:</label>
-            <input class="form-control" type="tel" id="phone" name="phone">
-          </div>
-
-          <div class="form-row">
-            <label class="form-label" for="birthdate">Төрсөн огноо:</label>
-            <input class="form-control" type="date" id="birthdate" name="birthdate">
-          </div>
-
-          <div class="form-row">
-            <span class="form-label">Хүйс:</span>
-            <input class="form-choice" type="radio" id="male" name="gender" value="male">
-            <label class="choice-label" for="male">Эрэгтэй</label>
-            <input class="form-choice" type="radio" id="female" name="gender" value="female">
-            <label class="choice-label" for="female">Эмэгтэй</label>
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Боловсрол ба сонирхол</legend>
-
-          <div class="form-row">
-            <label class="form-label" for="degree">Суралцаж буй түвшин:</label>
-            <select class="form-control" id="degree" name="degree">
-              <option value="">Сонгоно уу</option>
-              <option value="bachelor">Бакалавр</option>
-              <option value="master">Магистр</option>
-              <option value="doctor">Докторант</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <span class="form-label">Сонирхож буй технологи:</span>
-            <input class="form-choice" type="checkbox" id="html" name="skills" value="html">
-            <label class="choice-label" for="html">HTML, CSS</label>
-            <input class="form-choice" type="checkbox" id="javascript" name="skills" value="javascript">
-            <label class="choice-label" for="javascript">JavaScript</label>
-          </div>
-
-          <div class="form-row">
-            <label class="form-label" for="about">Нэмэлт :</label>
-            <textarea class="form-control" id="about" name="about" rows="4"></textarea>
-          </div>
-        </fieldset>
-
-        <button class="form-button" type="submit">Илгээх</button>
-      </form>
-    </section>
+    <a class="button-link" href="Lab1.html">Танилцуулга руу буцах</a>
   </main>
 
   <footer class="site-footer">
-    <p>Веб зохиомж хичээл</p>
+    <p>&copy; 2026 .</p>
   </footer>
 </body>
 </html>
