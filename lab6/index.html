@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="mn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Даваажаргалын аялал, өдөр тутмын агшин болон сонирхлын зургийн цомог.">
+  <meta name="theme-color" content="#f5f4ed">
+  <title>Агшнууд | Даваажаргалын зургийн цомог</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Агшнууд, нүүр хуудас">
+      <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
+        <path d="M18 3.5 32.5 29H3.5L18 3.5Z" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="18" cy="21" r="4.5" fill="currentColor"/>
+        <path d="M7 29h22" stroke="currentColor" stroke-width="2"/>
+      </svg>
+      <span>АГШНУУД<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Үндсэн цэс">
+      <a href="#gallery">Цомог</a>
+      <a href="#film">Бичлэг</a>
+      <a href="../Lab5.html">Лаб 5</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Бараан горим асаах" aria-pressed="false" title="Өнгөний горим солих">
+      <svg class="theme-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/>
+      </svg>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <p class="eyebrow">ЗУРГИЙН ТЭМДЭГЛЭЛ · УЛААНБААТАР</p>
+      <h1 id="hero-title">Өдөр бүрт үлдэх <em>нэг агшин.</em></h1>
+      <p class="hero-copy">Аялал, байгаль, хотын хэмнэл дундаас олж харсан жижигхэн түүхүүд.</p>
+      <a class="hero-link" href="#gallery">Цомгийг үзэх <span aria-hidden="true">↓</span></a>
+      <div class="hero-stamp" aria-hidden="true">
+        <svg viewBox="0 0 120 120" focusable="false">
+          <defs><path id="stamp-circle" d="M60,60 m-43,0 a43,43 0 1,1 86,0 a43,43 0 1,1 -86,0"/></defs>
+          <text><textPath href="#stamp-circle">MOMENTS · MEMORIES · MOMENTS · </textPath></text>
+          <path d="m60 35 5 18 18 7-18 6-5 19-6-19-18-6 18-7 6-18Z" fill="currentColor"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">СОНГОСОН АГШНУУД</p>
+          <h2 id="gallery-title">Зургийн цомог</h2>
+        </div>
+        <p class="section-note">Карт бүрийн товчийг дарж арын түүхийг үзээрэй.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <article class="flip-card" style="--i: 0">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="img/photo1.jpg" alt="Өдрийн гэрэлд авхуулсан хөрөг" width="900" height="1200" fetchpriority="high">
+              <div class="photo-caption"><span>01 / ХӨРӨГ</span><h3>Өөрийн өнцгөөс</h3></div>
+              <button class="flip-toggle" type="button" aria-label="Өөрийн өнцгөөс зургийн түүхийг үзэх" aria-pressed="false" title="Зургийн түүх үзэх">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+            <div class="card-face card-back" aria-hidden="true" inert>
+              <span class="card-index">01 / ХӨРӨГ</span><h3>Өөрийн өнцгөөс</h3>
+              <p>Энгийн өдөрт ч хадгалж үлдэх зүйл байдаг. Энэ цомгийн эхлэл бол өөрийнхөө өнцгийг ажиглах.</p>
+              <button class="flip-toggle flip-back" type="button" aria-label="Өөрийн өнцгөөс зургийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip-card" style="--i: 1">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="img/photo2.jpg" alt="Уулын замаар цааш үргэлжлэх аяллын зам" width="900" height="1200" loading="lazy">
+              <div class="photo-caption"><span>02 / АЯЛАЛ</span><h3>Замын төгсгөлд</h3></div>
+              <button class="flip-toggle" type="button" aria-label="Замын төгсгөлд зургийн түүхийг үзэх" aria-pressed="false" title="Зургийн түүх үзэх">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+            <div class="card-face card-back" aria-hidden="true" inert>
+              <span class="card-index">02 / АЯЛАЛ</span><h3>Замын төгсгөлд</h3>
+              <p>Удаан алхах тусам бодол цэгцэрч, очих газраас илүү зам өөрөө дурсамж болдог.</p>
+              <button class="flip-toggle flip-back" type="button" aria-label="Замын төгсгөлд зургийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip-card" style="--i: 2">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="img/photo3.jpg" alt="Хотын хуучин барилгын нарийн хийц" width="900" height="1200" loading="lazy">
+              <div class="photo-caption"><span>03 / ХОТ</span><h3>Чимээгүй гудамж</h3></div>
+              <button class="flip-toggle" type="button" aria-label="Чимээгүй гудамж зургийн түүхийг үзэх" aria-pressed="false" title="Зургийн түүх үзэх">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+            <div class="card-face card-back" aria-hidden="true" inert>
+              <span class="card-index">03 / ХОТ</span><h3>Чимээгүй гудамж</h3>
+              <p>Танил гудамжинд ч анзаараагүй цонх, хана, гэрлийн тусгал шинээр харагдана.</p>
+              <button class="flip-toggle flip-back" type="button" aria-label="Чимээгүй гудамж зургийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip-card" style="--i: 3">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="img/photo4.jpg" alt="Нар мандах үеийн уулсын алсын бараа" width="900" height="1200" loading="lazy">
+              <div class="photo-caption"><span>04 / ӨГЛӨӨ</span><h3>Шинэ эхлэл</h3></div>
+              <button class="flip-toggle" type="button" aria-label="Шинэ эхлэл зургийн түүхийг үзэх" aria-pressed="false" title="Зургийн түүх үзэх">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+            <div class="card-face card-back" aria-hidden="true" inert>
+              <span class="card-index">04 / ӨГЛӨӨ</span><h3>Шинэ эхлэл</h3>
+              <p>Өглөөний намуухан гэрэл өдөрт яаралгүй эхлэх шалтаг болдог.</p>
+              <button class="flip-toggle flip-back" type="button" aria-label="Шинэ эхлэл зургийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip-card" style="--i: 4">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="img/photo5.jpg" alt="Далайн эрэгт давалгаа зөөлөн түрэх агшин" width="900" height="1200" loading="lazy">
+              <div class="photo-caption"><span>05 / БАЙГАЛЬ</span><h3>Түрлэгийн хэмнэл</h3></div>
+              <button class="flip-toggle" type="button" aria-label="Түрлэгийн хэмнэл зургийн түүхийг үзэх" aria-pressed="false" title="Зургийн түүх үзэх">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+            <div class="card-face card-back" aria-hidden="true" inert>
+              <span class="card-index">05 / БАЙГАЛЬ</span><h3>Түрлэгийн хэмнэл</h3>
+              <p>Давалгаа ирж буцах хэмнэлд бодол хүртэл арай тайван болдог.</p>
+              <button class="flip-toggle flip-back" type="button" aria-label="Түрлэгийн хэмнэл зургийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <article class="flip-card" style="--i: 5">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <img src="img/photo6.jpg" alt="Оройн цэнхэр туяанд харагдах уулсын оргил" width="900" height="1200" loading="lazy">
+              <div class="photo-caption"><span>06 / ОРОЙ</span><h3>Цэнхэр цаг</h3></div>
+              <button class="flip-toggle" type="button" aria-label="Цэнхэр цаг зургийн түүхийг үзэх" aria-pressed="false" title="Зургийн түүх үзэх">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14m-7-7h14" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+            <div class="card-face card-back" aria-hidden="true" inert>
+              <span class="card-index">06 / ОРОЙ</span><h3>Цэнхэр цаг</h3>
+              <p>Нар жаргасны дараах богинохон завсар хот, уул хоёрыг зөөлөн өнгөөр холбодог.</p>
+              <button class="flip-toggle flip-back" type="button" aria-label="Цэнхэр цаг зургийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="film-section" id="film" aria-labelledby="film-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">ХӨДӨЛГӨӨНТ ДҮРС</p>
+          <h2 id="film-title">Агшны цаана</h2>
+        </div>
+        <p class="section-note">Бичлэгийн тайлбар, гаднын медиа холбоосыг эндээс үзнэ.</p>
+      </div>
+      <div class="media-grid">
+        <figure class="media-panel">
+          <video controls preload="metadata" playsinline poster="img/photo4.jpg">
+            <source src="video/clip.webm" type="video/webm">
+            <source src="video/clip.mp4" type="video/mp4">
+            <track kind="captions" src="video/clip.mn.vtt" srclang="mn" label="Монгол тайлбар" default>
+            Таны хөтөч video элементийг дэмжихгүй байна. <a href="video/clip.mp4">Бичлэг татах</a>.
+          </video>
+          <figcaption>Байгалийн нам гүм агшин <span>·</span> Монгол хадмалтай</figcaption>
+        </figure>
+        <div class="media-panel embed-panel">
+          <div class="embed-frame">
+            <iframe src="https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ" title="Big Buck Bunny нээлттэй богино хэмжээний кино" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" sandbox="allow-scripts allow-same-origin allow-presentation" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <p class="embed-caption">Нээлттэй богино хэмжээний кино <span>·</span> <a href="https://www.youtube.com/watch?v=aqz-KE-bpKQ" target="_blank" rel="noopener noreferrer">YouTube дээр нээх</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#top">АГШНУУД<span class="brand-dot">.</span></a>
+    <p>Веб зохиомж <span>·</span> Лаборатори 6</p>
+    <a href="../Lab5.html">Өмнөх лаборатори <span aria-hidden="true">↗</span></a>
+  </footer>
+</body>
+</html>
