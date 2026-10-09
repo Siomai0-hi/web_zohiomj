@@ -17,6 +17,10 @@ body {
   line-height: 1.5;
 }
 
+body.page-white {
+  --background: #fff;
+}
+
 .site-header {
   padding: 1rem max(1rem, calc((100% - 720px) / 2));
   color: #676a6b;
