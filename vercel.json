@@ -3,12 +3,5 @@
   "framework": null,
   "buildCommand": null,
   "installCommand": null,
-  "outputDirectory": ".",
-  "redirects": [
-    {
-      "source": "/",
-      "destination": "/lab6/",
-      "permanent": false
-    }
-  ]
+  "outputDirectory": "."
 }
