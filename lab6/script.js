@@ -1,5 +1,17 @@
 const themeButton = document.querySelector("#theme-toggle");
 const flipCards = document.querySelectorAll(".flip-card");
+const pageLoader = document.querySelector("#page-loader");
+
+function hidePageLoader() {
+  pageLoader.classList.add("is-hidden");
+}
+
+if (document.readyState === "complete") {
+  hidePageLoader();
+} else {
+  pageLoader.classList.add("is-visible");
+  window.addEventListener("load", hidePageLoader, { once: true });
+}
 
 function setTheme(theme) {
   const isDark = theme === "dark";

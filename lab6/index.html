@@ -10,6 +10,10 @@
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div class="page-loader" id="page-loader" role="status" aria-label="Хуудас ачаалж байна">
+    <span class="loader-spinner" aria-hidden="true"></span>
+    <span class="visually-hidden">Зургийн цомог ачаалж байна</span>
+  </div>
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Агшнууд, нүүр хуудас">
       <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true" focusable="false">
@@ -69,6 +73,7 @@
             <div class="card-face card-back" aria-hidden="true" inert>
               <span class="card-index">01 / ХӨРӨГ</span><h3>Өөрийн өнцгөөс</h3>
               <p>Энгийн өдөрт ч хадгалж үлдэх зүйл байдаг. Энэ цомгийн эхлэл бол өөрийнхөө өнцгийг ажиглах.</p>
+              <p class="photo-meta"><span>Огноо <strong>2026.06.12</strong></span><span>Газар <strong>Улаанбаатар</strong></span></p>
               <button class="flip-toggle flip-back" type="button" aria-label="Өөрийн өнцгөөс зургийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
               </button>
@@ -88,6 +93,7 @@
             <div class="card-face card-back" aria-hidden="true" inert>
               <span class="card-index">02 / АЯЛАЛ</span><h3>Замын төгсгөлд</h3>
               <p>Удаан алхах тусам бодол цэгцэрч, очих газраас илүү зам өөрөө дурсамж болдог.</p>
+              <p class="photo-meta"><span>Огноо <strong>2026.06.18</strong></span><span>Газар <strong>Тэрэлж</strong></span></p>
               <button class="flip-toggle flip-back" type="button" aria-label="Замын төгсгөлд зургийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
               </button>
@@ -107,6 +113,7 @@
             <div class="card-face card-back" aria-hidden="true" inert>
               <span class="card-index">03 / ХОТ</span><h3>Чимээгүй гудамж</h3>
               <p>Танил гудамжинд ч анзаараагүй цонх, хана, гэрлийн тусгал шинээр харагдана.</p>
+              <p class="photo-meta"><span>Огноо <strong>2026.07.02</strong></span><span>Газар <strong>Улаанбаатар</strong></span></p>
               <button class="flip-toggle flip-back" type="button" aria-label="Чимээгүй гудамж зургийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
               </button>
@@ -126,6 +133,7 @@
             <div class="card-face card-back" aria-hidden="true" inert>
               <span class="card-index">04 / ӨГЛӨӨ</span><h3>Шинэ эхлэл</h3>
               <p>Өглөөний намуухан гэрэл өдөрт яаралгүй эхлэх шалтаг болдог.</p>
+              <p class="photo-meta"><span>Огноо <strong>2026.07.14</strong></span><span>Газар <strong>Хөвсгөл</strong></span></p>
               <button class="flip-toggle flip-back" type="button" aria-label="Шинэ эхлэл зургийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
               </button>
@@ -145,6 +153,7 @@
             <div class="card-face card-back" aria-hidden="true" inert>
               <span class="card-index">05 / БАЙГАЛЬ</span><h3>Түрлэгийн хэмнэл</h3>
               <p>Давалгаа ирж буцах хэмнэлд бодол хүртэл арай тайван болдог.</p>
+              <p class="photo-meta"><span>Огноо <strong>2026.08.03</strong></span><span>Газар <strong>Дорнодын эрэг</strong></span></p>
               <button class="flip-toggle flip-back" type="button" aria-label="Түрлэгийн хэмнэл зургийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
               </button>
@@ -164,6 +173,7 @@
             <div class="card-face card-back" aria-hidden="true" inert>
               <span class="card-index">06 / ОРОЙ</span><h3>Цэнхэр цаг</h3>
               <p>Нар жаргасны дараах богинохон завсар хот, уул хоёрыг зөөлөн өнгөөр холбодог.</p>
+              <p class="photo-meta"><span>Огноо <strong>2026.08.21</strong></span><span>Газар <strong>Богд хан уул</strong></span></p>
               <button class="flip-toggle flip-back" type="button" aria-label="Цэнхэр цаг зургийг буцааж харах" aria-pressed="false" title="Зураг руу буцах" tabindex="-1">
                 <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5m7-7-7 7 7 7" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"/></svg>
               </button>

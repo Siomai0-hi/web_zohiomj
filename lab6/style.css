@@ -13,7 +13,23 @@
   --accent: #c56143;
   --accent-soft: #f0d5c3;
   --photo-overlay: linear-gradient(180deg, transparent 42%, rgb(15 25 22 / 78%) 100%);
+  --hero-tint: rgb(197 97 67 / 9%);
+  --photo-text: #fff;
+  --photo-control-border: rgb(255 255 255 / 68%);
+  --photo-control-bg: rgb(20 35 30 / 68%);
+  --media-fallback: #111;
   --focus: #a84328;
+  --duration-fast: 160ms;
+  --duration-base: 220ms;
+  --duration-flip: 620ms;
+  --duration-loader: 800ms;
+  --duration-entry: 580ms;
+  --duration-stagger: 75ms;
+  --duration-zoom: 550ms;
+  --duration-reduced: 0.01ms;
+  --radius-card: 4px;
+  --radius-control: 50%;
+  --shadow-card: 0 10px 26px rgb(24 43 36 / 14%);
 }
 
 html[data-theme="dark"] {
@@ -29,7 +45,9 @@ html[data-theme="dark"] {
   --accent: #f0a17f;
   --accent-soft: #49382f;
   --photo-overlay: linear-gradient(180deg, transparent 40%, rgb(8 14 12 / 84%) 100%);
+  --hero-tint: rgb(240 161 127 / 10%);
   --focus: #ffd1a2;
+  --shadow-card: 0 10px 26px rgb(0 0 0 / 30%);
 }
 
 * {
@@ -49,7 +67,47 @@ body {
   background-size: 18px 18px;
   font-family: "DM Sans", sans-serif;
   line-height: 1.6;
-  transition: background-color 220ms ease, color 220ms ease;
+  transition: background-color var(--duration-base) ease, color var(--duration-base) ease;
+}
+
+.page-loader {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: none;
+  place-items: center;
+  color: var(--forest);
+  background: var(--page);
+  transition: opacity var(--duration-base) ease, visibility var(--duration-base) ease;
+}
+
+.page-loader.is-visible {
+  display: grid;
+}
+
+.page-loader.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-spinner {
+  width: 42px;
+  aspect-ratio: 1;
+  border: 3px solid var(--line);
+  border-top-color: var(--accent);
+  border-radius: var(--radius-control);
+  animation: loader-spin var(--duration-loader) linear infinite;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
 }
 
 button,
@@ -128,11 +186,11 @@ video:focus-visible {
   height: 40px;
   place-items: center;
   border: 1px solid var(--line);
-  border-radius: 50%;
+  border-radius: var(--radius-control);
   color: var(--ink);
   background: var(--surface);
   cursor: pointer;
-  transition: transform 160ms ease, background-color 220ms ease;
+  transition: transform var(--duration-fast) ease, background-color var(--duration-base) ease;
 }
 
 .theme-toggle:hover {
@@ -155,7 +213,7 @@ html[data-theme="dark"] .theme-icon {
   padding: 62px 8% 58px;
   border-bottom: 1px solid var(--line);
   background-color: var(--surface-raised);
-  background-image: linear-gradient(115deg, transparent 0 72%, rgb(197 97 67 / 9%) 72% 100%);
+  background-image: linear-gradient(115deg, transparent 0 72%, var(--hero-tint) 72% 100%);
 }
 
 .eyebrow {
@@ -249,8 +307,15 @@ html[data-theme="dark"] .theme-icon {
   min-width: 0;
   aspect-ratio: 4 / 3;
   perspective: 1100px;
-  animation: card-arrive 580ms both;
-  animation-delay: calc(var(--i, 0) * 75ms);
+  animation: card-arrive var(--duration-entry) both;
+  animation-delay: calc(var(--i, 0) * var(--duration-stagger));
+  transition: box-shadow var(--duration-base) ease;
+}
+
+.flip-card:hover,
+.flip-card:focus-within {
+  z-index: 1;
+  box-shadow: var(--shadow-card);
 }
 
 .card-inner {
@@ -258,7 +323,7 @@ html[data-theme="dark"] .theme-icon {
   width: 100%;
   height: 100%;
   transform-style: preserve-3d;
-  transition: transform 620ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition: transform var(--duration-flip) cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .flip-card.is-flipped .card-inner {
@@ -271,6 +336,7 @@ html[data-theme="dark"] .theme-icon {
   overflow: hidden;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  border-radius: var(--radius-card);
 }
 
 .card-front {
@@ -290,7 +356,7 @@ html[data-theme="dark"] .theme-icon {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 550ms ease;
+  transition: transform var(--duration-zoom) ease;
 }
 
 .photo-caption {
@@ -299,7 +365,7 @@ html[data-theme="dark"] .theme-icon {
   right: 60px;
   bottom: 17px;
   left: 18px;
-  color: #fff;
+  color: var(--photo-text);
   pointer-events: none;
 }
 
@@ -319,6 +385,26 @@ html[data-theme="dark"] .theme-icon {
   line-height: 1.2;
 }
 
+.photo-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 18px 0 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.photo-meta span {
+  display: grid;
+  gap: 2px;
+}
+
+.photo-meta strong {
+  color: var(--ink);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
 .flip-toggle {
   position: absolute;
   z-index: 2;
@@ -328,12 +414,12 @@ html[data-theme="dark"] .theme-icon {
   width: 38px;
   height: 38px;
   place-items: center;
-  border: 1px solid rgb(255 255 255 / 68%);
-  border-radius: 50%;
-  color: #fff;
-  background: rgb(20 35 30 / 68%);
+  border: 1px solid var(--photo-control-border);
+  border-radius: var(--radius-control);
+  color: var(--photo-text);
+  background: var(--photo-control-bg);
   cursor: pointer;
-  transition: transform 160ms ease, background-color 160ms ease;
+  transition: transform var(--duration-fast) ease, background-color var(--duration-fast) ease;
 }
 
 .flip-toggle:hover {
@@ -406,7 +492,7 @@ html[data-theme="dark"] .theme-icon {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 1px solid var(--line);
-  background: #111;
+  background: var(--media-fallback);
 }
 
 .media-panel video {
@@ -597,9 +683,35 @@ html[data-theme="dark"] .theme-icon {
   }
 }
 
+.flip-card:focus-within .card-inner {
+  transform: translateY(-4px);
+}
+
+.flip-card.is-flipped:focus-within .card-inner {
+  transform: translateY(-4px) rotateY(180deg);
+}
+
+.flip-card:focus-within .card-front img {
+  transform: scale(1.045);
+}
+
 @media (hover: hover) {
-  .card-front:hover img {
+  .flip-card:hover .card-inner {
+    transform: translateY(-4px);
+  }
+
+  .flip-card.is-flipped:hover .card-inner {
+    transform: translateY(-4px) rotateY(180deg);
+  }
+
+  .flip-card:hover .card-front img {
     transform: scale(1.045);
+  }
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
@@ -617,9 +729,13 @@ html[data-theme="dark"] .theme-icon {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    animation-duration: var(--duration-reduced) !important;
     animation-iteration-count: 1 !important;
     scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
+    transition-duration: var(--duration-reduced) !important;
+  }
+
+  .page-loader {
+    transition: none;
   }
 }
